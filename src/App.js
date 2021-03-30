@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
@@ -27,6 +27,7 @@ function App() {
   const nextId = useRef(4);
 
   // todos 배열이 바뀌었을 때만 함수 생성
+  // props로 전달해야 할 함수를 만들 때는 useCallback 사용 습관화
   const onInsert = useCallback(
     (text) => {
       const todo = {

@@ -1,4 +1,3 @@
-import { computeHeadingLevel } from '@testing-library/dom';
 import React from 'react';
 import './TodoTemplate.scss';
 
