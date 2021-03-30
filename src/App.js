@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
@@ -22,9 +22,27 @@ function App() {
     },
   ]);
 
+  // 고윳값으로 사용될 id
+  // ref 사용 변수 담기
+  const nextId = useRef(4);
+
+  // todos 배열이 바뀌었을 때만 함수 생성
+  const onInsert = useCallback(
+    (text) => {
+      const todo = {
+        id: nextId,
+        text: text,
+        checked: false,
+      };
+      setTodos(todos.concat(todo));
+      nextId.current = nextId.current + 1;
+    },
+    [todos],
+  );
+
   return (
     <TodoTemplate>
-      <TodoInsert />
+      <TodoInsert onInsert={onInsert} />
       <TodoList todos={todos} />
     </TodoTemplate>
   );
