@@ -3,28 +3,43 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 
-function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: '리액트 기초 알아보기',
-      checked: true,
-    },
-    {
-      id: 2,
-      text: '컴포넌트 스타일링해 보기',
-      checked: true,
-    },
-    {
-      id: 3,
-      text: '일정 관리 앱 만들어 보기',
+function createBulkTodos() {
+  const array = [];
+  for (let i = 1; i <= 2500; i++) {
+    array.push({
+      id: i,
+      text: `할 일 ${i}`,
       checked: false,
-    },
-  ]);
+    });
+  }
+  return array;
+}
+
+function App() {
+  // const [todos, setTodos] = useState([
+  //   {
+  //     id: 1,
+  //     text: '리액트 기초 알아보기',
+  //     checked: true,
+  //   },
+  //   {
+  //     id: 2,
+  //     text: '컴포넌트 스타일링해 보기',
+  //     checked: true,
+  //   },
+  //   {
+  //     id: 3,
+  //     text: '일정 관리 앱 만들어 보기',
+  //     checked: false,
+  //   },
+  // ]);
 
   // 고윳값으로 사용될 id
   // ref 사용 변수 담기
-  const nextId = useRef(4);
+  // const nextId = useRef(4);
+
+  const [todos, setTodos] = useState(createBulkTodos);
+  const nextId = useRef(2501);
 
   // todos 배열이 바뀌었을 때만 함수 생성
   // props로 전달해야 할 함수를 만들 때는 useCallback 사용 습관화
