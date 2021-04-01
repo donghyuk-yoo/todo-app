@@ -38,6 +38,7 @@ function App() {
   // ref 사용 변수 담기
   // const nextId = useRef(4);
 
+  // 컴포넌트 최적화 테스트
   const [todos, setTodos] = useState(createBulkTodos);
   const nextId = useRef(2501);
 
