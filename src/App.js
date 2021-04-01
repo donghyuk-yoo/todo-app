@@ -51,27 +51,33 @@ function App() {
         text: text,
         checked: false,
       };
-      setTodos(todos.concat(todo));
+      // 최적화전 : 새로운 상태를 이용한 업데이트
+      // setTodos(todos.concat(todo));
+      // todos배열이 바뀔 떄마다 함수가 새로 만들어지는 것 방지
+      // 최적화 : 1. 함수형 업데이트 2. useReducer
+      // 함수형 업데이트
+      setTodos((todos) => todos.concat(todo));
       nextId.current = nextId.current + 1;
     },
-    [todos],
+    // 함수형 업데이트에서 useCallback 사용할 때 두 번쨰 파라미터 넣는 배열에 값 안 넣어도 됨
+    // [todos],
+    [],
   );
 
-  const onRemove = useCallback(
-    (id) => {
-      setTodos(todos.filter((todo) => todo.id !== id));
-    },
-    [todos],
-  );
+  const onRemove = useCallback((id) => {
+    // 최적화 : 함수형 업데이트
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
+  }, []);
 
   const onToggle = useCallback(
     (id) =>
-      setTodos(
+      // 최적화 : 함수형 업데이트
+      setTodos((todos) =>
         todos.map((todo) =>
           todo.id === id ? { ...todo, checked: !todo.checked } : todo,
         ),
       ),
-    [todos],
+    [],
   );
 
   return (
