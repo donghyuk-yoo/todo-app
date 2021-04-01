@@ -18,11 +18,15 @@ function createBulkTodos() {
 function todoReducer(todos, action) {
   switch (action.type) {
     case 'INSERT':
+      // 불변성을 지킨 업데이트 : 아예 새로운 배열 혹은 객체를 만듦으로서, 변경 여부 추적 -> 렌더링성능 최적화 가능해짐
+      // 불변성을 지키지 않으면 객체 내부의 값이 새로워져도 변화 감지x -> React.memo에서 비교 최적화 불가능
       return todos.concat(action.todo);
     case 'REMOVE':
       return todos.filter((todo) => todo.id !== action.id);
     case 'TOGGLE':
       return todos.map((todo) =>
+        // ...(전개 연산자)는 얉은 복사(가장 바깥쪽 값만 복사된다.), 그러므로 객체 혹은 배열은
+        // 내부의 값 또한 따로 복사해 주어야 함
         todo.id === action.id ? { ...todo, checked: !todo.checked } : todo,
       );
     default:
