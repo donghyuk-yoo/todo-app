@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/donghyuk-yoo/todo-app/static/css/main.2f480728.chunk.css",
-    "main.js": "/donghyuk-yoo/todo-app/static/js/main.ce9140ad.chunk.js",
-    "main.js.map": "/donghyuk-yoo/todo-app/static/js/main.ce9140ad.chunk.js.map",
-    "runtime-main.js": "/donghyuk-yoo/todo-app/static/js/runtime-main.65f17c5c.js",
-    "runtime-main.js.map": "/donghyuk-yoo/todo-app/static/js/runtime-main.65f17c5c.js.map",
-    "static/js/2.904b0940.chunk.js": "/donghyuk-yoo/todo-app/static/js/2.904b0940.chunk.js",
-    "static/js/2.904b0940.chunk.js.map": "/donghyuk-yoo/todo-app/static/js/2.904b0940.chunk.js.map",
-    "static/js/3.a389be21.chunk.js": "/donghyuk-yoo/todo-app/static/js/3.a389be21.chunk.js",
-    "static/js/3.a389be21.chunk.js.map": "/donghyuk-yoo/todo-app/static/js/3.a389be21.chunk.js.map",
-    "index.html": "/donghyuk-yoo/todo-app/index.html",
-    "static/css/main.2f480728.chunk.css.map": "/donghyuk-yoo/todo-app/static/css/main.2f480728.chunk.css.map",
-    "static/js/2.904b0940.chunk.js.LICENSE.txt": "/donghyuk-yoo/todo-app/static/js/2.904b0940.chunk.js.LICENSE.txt"
+    "main.css": "/todo-app/static/css/main.2f480728.chunk.css",
+    "main.js": "/todo-app/static/js/main.ce9140ad.chunk.js",
+    "main.js.map": "/todo-app/static/js/main.ce9140ad.chunk.js.map",
+    "runtime-main.js": "/todo-app/static/js/runtime-main.545460fa.js",
+    "runtime-main.js.map": "/todo-app/static/js/runtime-main.545460fa.js.map",
+    "static/js/2.904b0940.chunk.js": "/todo-app/static/js/2.904b0940.chunk.js",
+    "static/js/2.904b0940.chunk.js.map": "/todo-app/static/js/2.904b0940.chunk.js.map",
+    "static/js/3.a389be21.chunk.js": "/todo-app/static/js/3.a389be21.chunk.js",
+    "static/js/3.a389be21.chunk.js.map": "/todo-app/static/js/3.a389be21.chunk.js.map",
+    "index.html": "/todo-app/index.html",
+    "static/css/main.2f480728.chunk.css.map": "/todo-app/static/css/main.2f480728.chunk.css.map",
+    "static/js/2.904b0940.chunk.js.LICENSE.txt": "/todo-app/static/js/2.904b0940.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.65f17c5c.js",
+    "static/js/runtime-main.545460fa.js",
     "static/js/2.904b0940.chunk.js",
     "static/css/main.2f480728.chunk.css",
     "static/js/main.ce9140ad.chunk.js"
